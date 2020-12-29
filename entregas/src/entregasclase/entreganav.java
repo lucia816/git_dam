@@ -5,20 +5,22 @@ public class entreganav {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String fichero = "C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar";
+		char [] letra= {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'}; 
+		String tareai;
+		
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Introduzca la terea a realizar ");
+		tareai = sc.next();
 		try {
-			FileWriter pw = new FileWriter(new File (fichero),true);
-			Scanner sc = new Scanner (System.in);
-			System.out.println("Introduce la tarea a realizar ");
-			String incomptarea = sc.next();
-			pw.write(incomptarea);
-			sc.nextLine();
+			FileWriter fichero =  new FileWriter ("C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar",true);
+			
+			PrintWriter pw = new PrintWriter(fichero);
+			
+			pw.println(tareai);
+			
 			pw.close();
 			
-			while (sc.hasNextLine()) {
-				String linea = sc.nextLine(); 
-				System.out.println(linea);  
-			}
+	
 		} catch (Exception e) {
 			System.err.println("Problema para abrir el archivo");
 		}
