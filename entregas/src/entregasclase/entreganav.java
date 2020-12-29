@@ -19,24 +19,36 @@ public class entreganav {
 			
 			System.out.println("Que desea hacer? ");
 			System.out.println("1- Crear una nueva tarea pendiente ");
-			System.out.println("2- Dar por terminada una tarea pendiente ");
-			System.out.println("3- Mostrar las tareas pendientes ");
+			System.out.println("2- Mostrar las tareas pendientes ");
+			System.out.println("3- Dar por terminada una tarea pendiente ");
 			opcionqhacer = sc.nextInt();
 			switch (opcionqhacer){
 			
 			case 1 : 
 				if (opcionqhacer == 1) {
+					System.out.println("Indicar la nueva tarea ");
 					String tareanueva = sc.next();
+					
 					tareas.put(sc, true);
 					PrintWriter pw = new PrintWriter(fichero);
 					pw.println(tareanueva);
 					pw.println(fecha);
+					
 					break;
 				}
 			case 2: 
+				if (opcionqhacer == 2) {
+					PrintWriter pw = new PrintWriter(fichero);
+					pw.println(tareas);
+					pw.println(fecha);
+					break;
+				}
+			case 3: 
 				
-				if (opcionqhacer== 2) {
+				if (opcionqhacer== 3) {
 					System.out.println("Cual quieres modificar? ");
+					System.out.println("1- Poner arbol");
+					System.out.println("2- Poner la mesa ");
 					opcionqeliminar = sc.nextInt();
 					
 					switch (opcionqeliminar) {
@@ -47,8 +59,11 @@ public class entreganav {
 								tareascomp.put("Poner arbol", true);
 								PrintWriter pw = new PrintWriter(fichero);
 								pw.println("Tareas aun pendientes ");
+								pw.println("----------------------");
 								pw.println(tareas);
+								pw.println();
 								pw.println("Tareas completas ");
+								pw.println("------------------");
 								pw.println(tareascomp);
 								break;
 							}
@@ -71,14 +86,7 @@ public class entreganav {
 					}
 				}
 			}
-			System.out.println("Tareas pendientes: ");
 			
-			tareas.put("Poner arbol", true);
-			tareas.put("Poner la mesa",true);
-
-			System.out.println("1- Poner arbol: " + tareas.get("Poner arbol"));
-			System.out.println("2- Poner la mesa: " + tareas.get("Poner la mesa"));
-			System.out.println();
 			PrintWriter pw = new PrintWriter(fichero);
 			pw.close();
 			
