@@ -13,6 +13,10 @@ public class entreganav {
 		try {
 			FileWriter fichero =  new FileWriter ("C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar",true);
 			Hashtable tareas  = new Hashtable();
+			Hashtable tareascomp = new Hashtable (); 
+			tareas.put("Poner arbol", true);
+			tareas.put("Poner la mesa ",true);
+			
 			System.out.println("Que desea hacer? ");
 			System.out.println("1- Crear una nueva tarea pendiente ");
 			System.out.println("2- Dar por terminada una tarea pendiente ");
@@ -26,33 +30,45 @@ public class entreganav {
 					tareas.put(sc, true);
 					PrintWriter pw = new PrintWriter(fichero);
 					pw.println(tareanueva);
+					pw.println(fecha);
 					break;
 				}
 			case 2: 
 				
 				if (opcionqhacer== 2) {
-					tareas.put("Poner arbol", true);
-					tareas.put("Poner la mesa",true);
 					System.out.println("Cual quieres modificar? ");
-					cualelimina = sc.nextInt();
 					opcionqeliminar = sc.nextInt();
+					
 					switch (opcionqeliminar) {
 					case 1:
 						if (opcionqeliminar == 1) {
+							
 								tareas.remove("Poner arbol");
+								tareascomp.put("Poner arbol", true);
+								PrintWriter pw = new PrintWriter(fichero);
+								pw.println("Tareas aun pendientes ");
+								pw.println(tareas);
+								pw.println("Tareas completas ");
+								pw.println(tareascomp);
 								break;
 							}
 					case 2:
 						if (opcionqeliminar == 2) {
-							tareas.remove("Poner la mesa");
+							
+							tareas.remove("Poner la mesa ");
+							
+							PrintWriter pw = new PrintWriter(fichero);
+							pw.println("Tareas aun pendientes");
+							pw.println("-----------------------");
+							pw.println(tareas);
+							pw.println();
+							tareascomp.put("Poner la mesa ", true);
+							pw.println("Tareas completas ");
+							pw.println("------------------");
+							pw.println(tareascomp);
 							break;
 						}
 					}
-					
-					
-					PrintWriter pw = new PrintWriter(fichero);
-					pw.println(tareas);
-				
 				}
 			}
 			System.out.println("Tareas pendientes: ");
