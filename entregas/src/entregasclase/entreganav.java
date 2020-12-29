@@ -4,27 +4,24 @@ import java.util.*;
 public class entreganav {
 
 	public static void main(String[] args) {
-		
-		String tareainc;
-		Scanner sc = new Scanner (System.in);
-		System.out.println("Introduzca la terea a realizar ");
-		tareainc = sc.next();
-		String tareas []= {fichero};
 		    
 		try {
 			FileWriter fichero =  new FileWriter ("C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar",true);
+			Hashtable tareas  = new Hashtable();
+			tareas.put("Poner arbol",true);
+			tareas.put("Matematica",true);
 			
+			
+			Integer minumero = (Integer) tareas.get("numero");
+
+			System.out.println("Poner arbol: " + tareas.get("Poner arbol"));
 			PrintWriter pw = new PrintWriter(fichero);
-			pw.println(tareainc);
+			pw.println("Poner arbol: " +tareas.get("Poner arbol"));
 			pw.close();
 			
-			for (int i = 0;i < tareas.length; i++) {
-				Hashtable direccion  = new Hashtable();
-				direccion.put(tareainc,false);
-				Integer minumero = (Integer) direccion.get("numero");
-
-				System.out.println("Tarea : " + tareas [0]);	
-			}
+		
+					
+			
 		
 			
 		} catch (Exception e) {
