@@ -4,7 +4,7 @@ import java.util.*;
 public class entreganav {
 
 	public static void main(String[] args) {
-		FileWriter fichero =  new FileWriter ("C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar",true);
+		
 		String tareainc;
 		Scanner sc = new Scanner (System.in);
 		System.out.println("Introduzca la terea a realizar ");
@@ -12,13 +12,13 @@ public class entreganav {
 		String tareas []= {fichero};
 		    
 		try {
-			
+			FileWriter fichero =  new FileWriter ("C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar",true);
 			
 			PrintWriter pw = new PrintWriter(fichero);
 			pw.println(tareainc);
 			pw.close();
 			
-			for (int i = 0;i < fichero; i++) {
+			for (int i = 0;i < tareas.length; i++) {
 				Hashtable direccion  = new Hashtable();
 				direccion.put(tareainc,false);
 				Integer minumero = (Integer) direccion.get("numero");
