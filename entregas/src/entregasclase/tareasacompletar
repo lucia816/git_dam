@@ -1,11 +1,14 @@
-ordenador
-Tue Dec 29 19:57:02 CET 2020
-{Poner la mesa =true, Poner arbol=true}
-Tue Dec 29 19:57:21 CET 2020
-Tareas aun pendientes 
-----------------------
-{Poner la mesa =true}
+2
+Sun Jan 03 16:51:04 CET 2021
+p
+Sun Jan 03 16:51:04 CET 2021
+a
+Sun Jan 03 16:51:04 CET 2021
+lc
+Sun Jan 03 16:51:04 CET 2021
+c
+Sun Jan 03 16:51:04 CET 2021
 
-Tareas completas 
-------------------
-{Poner arbol=true}
+Tareas pendientes
+{a=true, 2=true, lc=true, p=true, c=true}
+Sun Jan 03 16:51:04 CET 2021
