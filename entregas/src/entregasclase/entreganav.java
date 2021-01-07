@@ -1,5 +1,8 @@
 //Lucia Calabrese Maffei
+<<<<<<< HEAD
 //Github https://github.com/lucia816/git_dam/tree/master/entregas/src
+=======
+>>>>>>> branch 'master' of https://github.com/lucia816/git_dam
 package entregasclase;
 import entregasclase.*;
 import java.io.*;
