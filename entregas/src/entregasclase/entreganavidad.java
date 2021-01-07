@@ -17,7 +17,7 @@ public class entreganavidad {
 		
 		try {
 			FileWriter fichero = new FileWriter(
-					"C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareas", true);
+					"C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareas.txt", true);
 			PrintWriter pw = new PrintWriter(fichero);
 			
 			System.out.println("Que desea hacer? ");
@@ -36,20 +36,26 @@ public class entreganavidad {
 					tareainc1.setestado(true);
 					System.out.println(tareainc1.gettitulo(" ") + "_" + fecha + "_" + tareainc1.getestado(true));
 					
-					pw.println(titulo);
-					pw.print(tareainc1.getestado(false));
+					pw.println();
+					pw.print(titulo);
+					pw.print("_");
 					pw.print(fecha);
+					pw.print("_");
+					pw.print(tareainc1.getestado(false));
+					
 					break;
 				}
 			case 2: 
 				if (opcionqhacer == 2) {
-					List<String> milista = new ArrayList<String>();
-					String [] tareasincompletas = new String [milista.size()];
-					tareasincompletas = milista.toArray(tareasincompletas);
-					for(String s : tareasincompletas)
-						 System.out.println(s);
+				
+				
+				}
+			case 3:
+				if (opcionqhacer == 3) {
+					
 				}
 			}
+			pw.close();
 		} catch (Exception e) {
 			System.err.println("Problema para abrir el archivo");
 		}
