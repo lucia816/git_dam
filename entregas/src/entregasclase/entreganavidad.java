@@ -29,9 +29,9 @@ public class entreganavidad {
 				System.out.println("Que desea hacer? ");
 				System.out.println("1- Crear una nueva tarea pendiente ");
 				System.out.println("2- Crear una nueva tarea completa");
-				System.out.println("2- Leer tareas pendientes ");
-				System.out.println("3- Dar por terminada una tarea pendiente ");
-				System.out.println("4- Salir del programa");
+				System.out.println("3- Leer tareas pendientes ");
+				System.out.println("4- Dar por terminada una tarea pendiente ");
+				System.out.println("5- Salir del programa");
 
 				opcionqhacer = sc.nextInt();
 				switch (opcionqhacer) {
@@ -51,19 +51,34 @@ public class entreganavidad {
 						tareasincomp.put(titulo, tareainc1.getestado(false));
 						System.out.println(tareasincomp);
 					}
-				case 2:
-					if (opcionqhacer == 2) {
-						File ficheros = new File(
-								"C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar 1");
-						Scanner leer = new Scanner(ficheros);
-						while (leer.hasNextLine()) {
-							String datos = leer.next();
-							System.out.println(datos);
-						}
+				case 2: 
+					if (opcionqhacer ==2) {
+						System.out.println("titulo de la tarea");
+						String titulo = sc.next();
+						tareainc1.settitulo(titulo);
+						tareainc1.setestado(true);
+						System.out.println(tareainc1.gettitulo(" ") + "_" + fecha + "_" + tareainc1.getestado(true));
 
+						pw.println();
+						pw.print(titulo);
+						pw.print(tareainc1.getestado(false));
+						pw.print(fecha);
+						tareascomp.put(titulo, tareainc1.getestado(true));
+						System.out.println(tareascomp);
 					}
 				case 3:
 					if (opcionqhacer == 3) {
+						/*File ficheros = new File(
+								"C:\\Users\\HP\\git\\repository\\entregas\\src\\entregasclase\\tareasacompletar 1");
+						Scanner leer = new Scanner(ficheros);
+						/* while (leer.hasNextLine()) {
+							String datos = leer.next();
+							System.out.println(datos);
+						}*/
+						System.out.println(tareasincomp);
+					}
+				case 4:
+					if (opcionqhacer == 4) {
 
 						System.out.println("Indique el Titulo de la tarea a completar ");
 						String tituloacamb = sc.next();
@@ -76,8 +91,8 @@ public class entreganavidad {
 						pw.println(tareascomp);
 
 					}
-				case 4:
-					if (opcionqhacer == 4) {
+				case 5:
+					if (opcionqhacer == 5) {
 						salir = true;
 					}
 				}
