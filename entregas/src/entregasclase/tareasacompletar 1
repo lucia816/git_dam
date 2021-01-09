@@ -1,0 +1,13 @@
+
+lfalseSat Jan 09 15:47:28 CET 2021
+ufalseSat Jan 09 15:47:28 CET 2021
+lfalseSat Jan 09 15:47:43 CET 2021
+ufalseSat Jan 09 15:47:43 CET 2021
+cfalseSat Jan 09 15:47:43 CET 2021
+ifalseSat Jan 09 15:47:43 CET 2021
+afalseSat Jan 09 15:47:43 CET 2021
+{a=false, u=false, i=false, c=false}
+{l=true}
+
+{a=false, i=false, c=false}
+{l=true, u=true}
